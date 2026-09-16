@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+
+    <style>
+        :root {
+            --bg: #eeeeee;
+            --card: #ffffff;
+            --fg: #222222;
+            --accent: #246bd1;
+            --border: #cccccc;
+            --radius: 8px;
+            --pad: 12px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #181818;
+            --card: #292929;
+            --fg: #ffffff;
+            --accent: #6da3f2;
+            --border: #555555;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--fg);
+        }
+
+        .card {
+            max-width: 650px;
+            margin: auto;
+            padding: 25px;
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select,
+        textarea,
+        button {
+            padding: var(--pad);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 16px;
+        }
+
+        select,
+        textarea {
+            width: 100%;
+            margin-bottom: 12px;
+            color: var(--fg);
+            background-color: var(--card);
+        }
+
+        textarea {
+            height: 220px;
+            resize: vertical;
+        }
+
+        button {
+            margin: 4px;
+            color: white;
+            background-color: var(--accent);
+            cursor: pointer;
+        }
+
+        #delete-btn {
+            background-color: #b52323;
+        }
+
+        .buttons {
+            margin-bottom: 15px;
+        }
+
+        #history-list {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card">
+        <h1>Notes App</h1>
+
+        <label for="note-select">Muistiinpano</label>
+        <select id="note-select"></select>
+
+        <div class="buttons">
+            <button id="add-btn" type="button">Add</button>
+            <button id="rename-btn" type="button">Rename</button>
+            <button id="delete-btn" type="button">Delete</button>
+            <button id="theme-btn" type="button">Dark theme</button>
+        </div>
+
+        <label for="note-text">Sisältö</label>
+        <textarea id="note-text"></textarea>
+
+        <h2>Viimeisimmät muutokset</h2>
+        <ul id="history-list"></ul>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
